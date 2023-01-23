@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+       <div class="conteudo">
+        <img src="sucesso.svg" alt="">
+        <h1>Seu pedido %%sale_number%% já foi confirmado!</h1>
+        <p>Acabamos de confirmar seu pedido no valor de %%sale_amount%%. Agora é só esperar.</p>
+        <button>Continuar</button>
+       </div>
+    </div>
+</body>
+</html>
+<script> 
+    var yampiThankYouScript = document.createElement('script'); 
+    yampiThankYouScript.setAttribute('src', 'https://cdn.yampi.me/thankyou/thankyou.min.js'); 
+    yampiThankYouScript.setAttribute('type', 'text/javascript'); 
+   
+   document.getElementsByTagName('head')[0].appendChild(yampiThankYouScript); 
+    </script>
+
+<style>
+    .content {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.content .conteudo img {
+    width: 150px;
+    margin-top: 50px;
+}
+h1, p {
+    font-family: 'Montserrat';
+}
+button {
+    padding: 20px 100px;
+    border: 0;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+</style>
