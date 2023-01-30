@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Olá, %%customer_name%%, seu pedido já foi confirmado.</title>
     <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +18,18 @@
        <div class="conteudo">
         <img src="sucesso.svg" alt="">
         <h1>Olá %%customer_name%%, seu pedido já foi confirmado!</h1>
-        <p>Acabamos de confirmar seu pedido no valor de R$%%sale_amount%%. Agora é só esperar.</p>
+        <p>Acabamos de confirmar o seu pedido no valor de R$ %%sale_amount%%. Assim que identificarmos que o boleto for <br>
+            pago, enviaremos uma confirmação para você via email.
+        </p>
         <div class="infobutton">
             <a class="boleto-button" href="https://starkings.catalog.yampi.io/">Continuar </a>   
             <a class="boleto-button" href="%%billet_url%%">Visualizar boleto</a>   
         </div>
         <div class="boleto-pagamento">
             <h1>Pague o seu boleto com o código abaixo</h1>
-            <input disabled aria-disabled="" type="text" value="" id="myInput">%%barcode%%</input>
-            <button onclick="copiar()"> <img class="copy" src="copiar1.svg" alt="">
+           <p id="codigo-boleto">%%barcode%%</p>
+            <button id="copiar-codigo" onclick="copyToClipboard()">
+            <img class="copy" src="copiar1.svg" alt="">
                 Copiar código</button>
                 <h1 style="display: none;">Preciso de ajuda</h1>
         </div>
@@ -135,7 +138,8 @@ input, p {
     }
     .boleto-pagamento {
         width: 270px;
-        height: 110px;
+        height: 150px;
+        margin: 0  auto;
     }
     .boleto-pagamento h1 {
         font-size: 20px;
@@ -148,6 +152,7 @@ input, p {
         text-align: center;
         display: flex;
         gap: 50px;
+        margin-top: 4px;
     }
 }
 
@@ -160,3 +165,4 @@ input, p {
    
    document.getElementsByTagName('head')[0].appendChild(yampiThankYouScript); 
     </script>
+    

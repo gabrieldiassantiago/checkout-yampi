@@ -1,15 +1,10 @@
-
-function copiar() {
-    // Get the text field
-    var copyText = document.getElementById("myInput");
-  
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-  
-    // Alert the copied text
-    alert("O código foi copiado com sucesso: " + copyText.value);
-  }
+function copyToClipboard() {
+  let text = document.querySelector("#codigo-boleto").innerText;
+  let dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.value = text;
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+  alert("Código copiado com sucesso!" + ' ' + text);
+}

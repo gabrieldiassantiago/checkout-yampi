@@ -1,0 +1,23 @@
+<p id="codigo-boleto"> %%barcode%%</p>
+<button id="copy-button">Copiar</button>
+
+<script>
+  const copyButton = document.querySelector("#copy-button");
+  const codeBoleto = document.querySelector("#codigo-boleto");
+
+  function copyToClipboard(text) {
+    const tempInput = document.createElement("input");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+  }
+
+  copyButton.addEventListener("click", () => {
+    copyToClipboard(codeBoleto.textContent);
+  });
+</script>
+
+
+
