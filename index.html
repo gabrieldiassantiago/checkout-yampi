@@ -14,27 +14,34 @@
     <script src="code.js"></script>
 </head>
 <body>
+    <header>
+        <img src="logo.svg" class="logo" alt="">
+    </header>
     <div class="content">
        <div class="conteudo">
-        <img src="sucesso.svg" alt="">
-        <h1>Olá %%customer_name%%, seu pedido já foi confirmado!</h1>
-        <p>Acabamos de confirmar o seu pedido no valor de R$ %%sale_amount%%. Assim que identificarmos que o boleto for <br>
-            pago, enviaremos uma confirmação para você via email.
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player  src="https://assets2.lottiefiles.com/packages/lf20_wcnjmdp1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: 0 auto;"    autoplay></lottie-player>        <h1>Olá %%customer_name%%, seu pedido já foi confirmado!</h1>
+        <p class="mensagem">Acabamos de confirmar o seu pedido no valor de R$ %%sale_amount%%. Agora falta só você realizar o
+            pagamento do boleto.
         </p>
         <div class="infobutton">
             <a class="boleto-button" href="https://starkings.catalog.yampi.io/">Continuar </a>   
-            <a class="boleto-button" href="%%billet_url%%">Visualizar boleto</a>   
+             <a class="boleto-button" href="%%billet_url%%"> <img class="boleto-img" src="boleto-logo.svg" alt="">Baixar boleto</a>   
         </div>
         <div class="boleto-pagamento">
             <h1>Pague o seu boleto com o código abaixo</h1>
            <p id="codigo-boleto">%%barcode%%</p>
             <button id="copiar-codigo" onclick="copyToClipboard()">
-            <img class="copy" src="copiar1.svg" alt="">
+            <img class="copy-icon" src="copiar1.svg" alt="">
                 Copiar código</button>
-                <h1 style="display: none;">Preciso de ajuda</h1>
         </div>
        </div>
     </div>
+    <footer>
+        <h1>Tire suas dúvidas com a gente </h1>
+        <p>Acompanhe o status, entrega e detalhes do seu pedido conosco no WhatsApp</p>
+        <button>Falar com a gente</button>
+    </footer>
 
 </body>
 </html>
@@ -46,11 +53,61 @@
     margin: 0 auto;
     text-align: center;
 }
- .conteudo img {
-    width: 150px;
-    margin-top: 60px;
-    margin: 20px;
+
+* {
+    padding: 0;
+    margin: 0;
 }
+
+footer {
+    background-color: #111b21;
+    height: 250px;
+    margin-top: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+footer h1 {
+    color: white;
+    margin-top: 40px;
+}
+
+footer p {
+    color: white;
+    margin-top: 25px;
+}
+
+footer button {
+    margin: 0 auto;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    background-color: #25d366;
+    color: #111b21;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 40px;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    border: 0;
+    margin-top: 25px;
+    
+}
+
+.sucesso {
+    width: 150px;
+}
+.boleto-img {
+    width: 30px;
+}
+
+
+.boleto-butto img {
+    width: 20px;
+}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
@@ -68,6 +125,19 @@ input, p {
     border: 0;
     text-align: center;
     margin-top: 20px;
+}
+
+header .logo {
+    width: 200px;
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.mensagem {
+    width: 50%; 
+    text-align: center; 
+    margin: 0 auto; 
+    margin-top: 24px;
 }
 
 .boleto-button {
@@ -132,9 +202,31 @@ input, p {
         gap: 0;
         text-align: center;
     }
+    header .logo{
+        width: 230px;
+        margin: 0;
+        margin-left: 15%;
+}
     .conteudo > h1 {
         font-size: 20px;
         width: 350px;
+    }
+    footer {
+        width: 100%;
+        border-radius: 0;
+        height: 100%;
+    }
+
+    footer h1, p {
+        width: auto;
+    }
+    footer button {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    .mensagem {
+        width: 100%;
+
     }
     .boleto-pagamento {
         width: 270px;
@@ -152,7 +244,7 @@ input, p {
         text-align: center;
         display: flex;
         gap: 50px;
-        margin-top: 4px;
+        margin-top: 22px;
     }
 }
 
