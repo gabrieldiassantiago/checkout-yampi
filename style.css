@@ -49,6 +49,8 @@
     border-radius: 83px;
     width: 1000px;
     margin-top: 5px;
+    align-items: center;
+    text-align: center;
 }
 .pagamento-section {
     display: flex;
@@ -105,3 +107,4 @@ td, th {
     padding: 10px;
     align-items: center;
   }
+
