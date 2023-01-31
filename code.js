@@ -1,10 +1,6 @@
-function copyToClipboard() {
-  let text = document.querySelector("#cod-coleto").innerText;
-  let dummy = document.createElement("textarea");
-  document.body.appendChild(dummy);
-  dummy.value = text;
-  dummy.select();
+function copyInput() {
+  var input = document.querySelector("#inputValue");
+  input.select();
   document.execCommand("copy");
-  document.body.removeChild(dummy);
-  alert("Código copiado com sucesso!" + ' ' + text);
+  alert('Copiado com sucesso')
 }
