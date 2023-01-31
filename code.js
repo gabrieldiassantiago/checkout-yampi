@@ -1,5 +1,5 @@
 function copyToClipboard() {
-  let text = document.querySelector("#codigo-boleto").innerText;
+  let text = document.querySelector("#cod-coleto").innerText;
   let dummy = document.createElement("textarea");
   document.body.appendChild(dummy);
   dummy.value = text;

@@ -90,6 +90,7 @@
     border: 3px solid #40b76a;
     font-family: 'Montserrat';
     justify-content: center;
+    cursor: pointer;
 }
 
 .section-pedido-atualizado {
