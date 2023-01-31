@@ -14,249 +14,49 @@
     <script src="code.js"></script>
 </head>
 <body>
-    <header>
-        <img src="logo.svg" class="logo" alt="">
-    </header>
-    <div class="content">
-       <div class="conteudo">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player  src="https://assets2.lottiefiles.com/packages/lf20_wcnjmdp1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: 0 auto;"    autoplay></lottie-player>        <h1>Olá %%customer_name%%, seu pedido já foi confirmado!</h1>
-        <p class="mensagem">Acabamos de confirmar o seu pedido no valor de R$ %%sale_amount%%. Agora falta só você realizar o
-            pagamento do boleto.
-        </p>
-        <div class="infobutton">
-            <a class="boleto-button" href="https://starkings.catalog.yampi.io/">Continuar </a>   
-             <a class="boleto-button" href="%%billet_url%%"> <img class="boleto-img" src="boleto-logo.svg" alt="">Baixar boleto</a>   
-        </div>
-        <div class="boleto-pagamento">
-            <h1>Pague online copiando o código abaixo</h1>
-           <p id="codigo-boleto">%%barcode%%</p>
-            <button id="copiar-codigo" onclick="copyToClipboard()">
-            <img class="copy-icon" src="copiar1.svg" alt="">
-                Copiar código</button>
-        </div>
-       </div>
+   <div class="obrigado-container">
+    <div class="boleto-section">
+        <img src="sucesso.svg" alt="">
     </div>
-    <footer>
-        <h1>Tire suas dúvidas com a gente </h1>
-        <p>Acompanhe o status, entrega e detalhes do seu pedido conosco no WhatsApp</p>
-        <button>Falar com a gente</button>
-    </footer>
+    <div class="dados-user">
+        <h1>Obrigado, %%customer_first_name%%.</h1>
+        <p>Seu pedido já foi feito, enviamos o boleto também para o email %%customer_email%%.
+            <br> Assim que o pagamento for realizado, enviaremos uma confirmação para você.
+        </p> 
 
+        <div class="line"></div>
+    </div>
+    <div class="pagamento">
+        <h1>Código de pagamento do seu boleto</h1>
+    </div>
+    <div class="pagamento-section">
+        <input type="text" class="clipboardtext" id="cod-coleto" value="">     
+        <button>Copiar código</button> 
+    </div>
+    <div class="section-baixar">
+        <button>Baixar boleto</button>
+    </div>
+    <div class="section-pedido-atualizado">
+        <h1>Seus itens</h1>
+        <div class="line"></div>
+        <img src="" alt="">
+        <table>
+            <tr>
+              <th>Quantidade</th>
+              <th>Nome</th>
+              <th>Preço</th>
+            </tr>
+            <tr>
+              <td>%%product_quantity%%</td>
+              <td>%%product_name%%</td>
+              <td>%%sale_amount%%</td>
+            </tr>
+          </table>
+    </div>
+   </div>
 </body>
-</html>
-
-<style>
-    .content {
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-footer {
-    background-color: #111b21;
-    height: 250px;
-    margin-top: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-footer h1 {
-    color: white;
-    margin-top: 40px;
-}
-
-footer p {
-    color: white;
-    margin-top: 25px;
-}
-
-footer button {
-    margin: 0 auto;
-    padding: 15px 20px;
-    text-align: center;
-    display: flex;
-    background-color: #25d366;
-    color: #111b21;
-    padding-left: 32px;
-    padding-right: 32px;
-    border-radius: 40px;
-    font-family: 'Montserrat';
-    cursor: pointer;
-    border: 0;
-    margin-top: 25px;
-    
-}
-
-.sucesso {
-    width: 150px;
-}
-.boleto-img {
-    width: 30px;
-}
-
-
-.boleto-butto img {
-    width: 20px;
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
-    width: 500px;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-}
-input, p {
-    font-family: 'Montserrat';
-    font-size: 16px;
-    margin: 10px;
-    border: 0;
-    text-align: center;
-    margin-top: 20px;
-}
-
-header .logo {
-    width: 200px;
-    margin-left: 100px;
-    padding: 20px;
-}
-
-.mensagem {
-    width: 50%; 
-    text-align: center; 
-    margin: 0 auto; 
-    margin-top: 24px;
-}
-
-.boleto-button {
-    padding: 20px 100px;
-    border: 0;
-    color: white;
-    background-color: black;
-    border-radius: 20px;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    align-items: center;
-}
-.infobutton, a {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 50px;
-    text-decoration: none;
-    padding: 15px;
-}
-.boleto-pagamento {
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Montserrat';
-    border-radius: 15px;
-    border: 3px solid rgb(0, 0, 0);
-    margin-top: 20px;
-}
-.boleto-pagamento > button {
-    background-color: rgb(0, 0, 0);
-    padding: 15px 20px;
-    width: auto;
-    border: 0;
-    color: white;
-    font-family: 'Montserrat';
-    border-radius: 20px;
-    cursor: pointer;
-    align-items: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    gap: 207px;
-}
-.boleto-pagamento img {
-    width: 30px;
-    height: 40px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-@media only screen and (max-width: 600px) {
-    .infobutton, a {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        text-align: center;
-    }
-    .boleto-button {
-        width: auto;
-        font-size: 17px;
-        display: flex;
-        flex-direction: row;
-        gap: 6px;
-    }
-    header .logo{
-        width: 230px;
-        margin: 0;
-        margin-left: 15%;
-}
-    .conteudo > h1 {
-        font-size: 20px;
-        width: 350px;
-    }
-    footer {
-        width: 100%;
-        border-radius: 0;
-        height: 100%;
-    }
-
-    footer h1, p {
-        width: auto;
-    }
-    footer button {
-        margin-top: 20px;
-        margin-bottom: 50px;
-    }
-    .mensagem {
-        width: 100%;
-
-    }
-    .boleto-pagamento {
-        width: 270px;
-        height: 150px;
-        margin: 0  auto;
-    }
-    .boleto-pagamento h1 {
-        font-size: 20px;
-        text-align: center;
-        margin: 0 auto;
-        width: 270px;
-    }
-    .boleto-pagamento button {
-        width: 260px;
-        text-align: center;
-        display: flex;
-        gap: 50px;
-        margin-top: 4px;
-    }
-}
-
-
-</style>
+          </div>
+</body>
 <script> 
     var yampiThankYouScript = document.createElement('script'); 
     yampiThankYouScript.setAttribute('src', 'https://cdn.yampi.me/thankyou/thankyou.min.js'); 
