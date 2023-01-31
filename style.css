@@ -61,6 +61,14 @@
     gap: 20px;
     padding: 10px 15px;
 }
+
+.section-baixar {
+    display: flex;
+    margin: 0 auto;
+    width: 350px;
+    gap: 50px;
+}
+
 .section-baixar a {
     border: 0;
     height: 45px;
