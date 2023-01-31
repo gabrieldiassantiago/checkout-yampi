@@ -80,7 +80,7 @@
 
 }
 
-.pagamento-section button {
+.pagamento-section a {
     display: flex;
     padding: 10px 15px;
     font-size: 14px;
@@ -89,6 +89,7 @@
     border: 3px solid #40b76a;
     font-family: 'Montserrat';
     justify-content: center;
+    text-decoration: none;
 }
 
 .section-pedido-atualizado {
