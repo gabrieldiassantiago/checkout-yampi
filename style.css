@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 .boleto-section img {
     width: 70px;
@@ -110,3 +111,47 @@ td, th {
     align-items: center;
   }
 
+
+  .logotipo {
+    width: 200px;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .boleto-section {
+        margin-top: 40px;
+    }
+    .dados-user h1 {
+        font-size: 20px;
+    }
+    .line {
+        width: 386px;
+    }
+    .pagamento h1 {
+        font-size: 20px
+    }
+    .pagamento-section {
+        justify-content: center;
+        text-align: center;
+        width: auto;
+    }
+    .pagamento-section button  {
+        flex-direction: column;
+        margin: 0 auto;
+        width: 150px;
+    }
+    .section-pedido-atualizado {
+        display: none;
+    }
+    .pagamento-section input {
+        margin: 0 auto;
+        width: 350px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+  }
