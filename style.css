@@ -60,7 +60,7 @@
     gap: 20px;
     padding: 10px 15px;
 }
-.section-baixar button {
+.section-baixar a {
     border: 0;
     height: 45px;
     font-size: 15px;
@@ -80,7 +80,7 @@
 
 }
 
-.pagamento-section a {
+.pagamento-section button {
     display: flex;
     padding: 10px 15px;
     font-size: 14px;
@@ -89,7 +89,6 @@
     border: 3px solid #40b76a;
     font-family: 'Montserrat';
     justify-content: center;
-    text-decoration: none;
 }
 
 .section-pedido-atualizado {
